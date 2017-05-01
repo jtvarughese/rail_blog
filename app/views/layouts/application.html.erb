@@ -12,17 +12,17 @@
     <header>
       The Blog About Nothing
     </header>
-    
-    <nav>
-      <a href="/" class="nav-links">Home</a>
+
+    <nav class="navbar">
+      <a href="/" class="nav-links">HOME | </a>
         <% if session[:user_id] %>
-          <a href="/posts" class="nav-links">Feed</a>
-          <%= link_to("Profile", user_path(session[:user_id], :class => "nav-links")) %>
-          <%= link_to("Edit Profile", edit_user_path(session[:user_id], :class => "nav-links")) %>
-          <%= link_to("Sign Out", session_path(session[:user_id]), method: :delete, :class => "nav-links") %>
+          <a href="/posts" class="nav-links">POSTS | </a>
+          <%= link_to("PROFILE | ", user_path(session[:user_id], :class => "nav-links")) %>
+          <%= link_to("EDIT PROFILE | ", edit_user_path(session[:user_id], :class => "nav-links")) %>
+          <%= link_to("SIGN OUT", session_path(session[:user_id]), method: :delete, :class => "nav-links") %>
         <% else %>
-          <a href="/users/new" class="nav-links">Sign Up</a>
-          <a href="/sessions/new" class="nav-links">Sign In</a>
+          <a href="/users/new" class="nav-links">SIGN UP | </a>
+          <a href="/sessions/new" class="nav-links">SIGN IN</a>
         <% end %>
     </nav>
 
