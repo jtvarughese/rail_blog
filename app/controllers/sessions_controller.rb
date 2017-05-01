@@ -7,15 +7,15 @@ class SessionsController < ApplicationController
       if @user && @user.password == params[:password]
         session[:user_id] = @user.id
         flash[:notice] = "You signed in successfully!"
-        redirect_to home_path
+        redirect_to "/"
       else
         flash[:alert] = "Unable to sign in. Please check username and password."
-        redirect_to home_path
+        redirect_to "/"
       end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to home_path
+    redirect_to "/"
   end
 end
