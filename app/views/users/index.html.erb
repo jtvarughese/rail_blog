@@ -1,0 +1,10 @@
+Hello Newman.
+<ol>
+  <% @users.each do |u| %>
+    <li>
+      <strong>First Name</strong>: <%= u.fname %>
+      <strong>Last Name</strong>: <%= u.lname %>
+      <a href="/users/<%= u.id %>">Link to User</a>
+    </li>
+  <% end %>
+</ol>

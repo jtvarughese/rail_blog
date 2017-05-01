@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Blog About Nothing</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      The Blog About Nothing
+    </header>
+    
+    <nav>
+      <a href="/" class="nav-links">Home</a>
+        <% if session[:user_id] %>
+          <a href="/posts" class="nav-links">Feed</a>
+          <%= link_to("Profile", user_path(session[:user_id], :class => "nav-links")) %>
+          <%= link_to("Edit Profile", edit_user_path(session[:user_id], :class => "nav-links")) %>
+          <%= link_to("Sign Out", session_path(session[:user_id]), method: :delete, :class => "nav-links") %>
+        <% else %>
+          <a href="/users/new" class="nav-links">Sign Up</a>
+          <a href="/sessions/new" class="nav-links">Sign In</a>
+        <% end %>
+    </nav>
+
+    <% if flash[:notice] %>
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+  </body>
+</html>
