@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>The Blog About Nothing</title>
+    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,19 +11,20 @@
   </head>
 
   <body>
-    <header>
-      The Blog About Nothing
-    </header>
+    <div class="seinfeld">
+      <div><h1>The Blog About Nothing</h1></div>
+      <div><h3>For fans of the show, Seinfeld</h3></div>
+    </div>
 
     <nav class="navbar">
-      <a href="/" class="nav-links">HOME | </a>
+      <a href="/" class="nav-links">HOME</a>
         <% if session[:user_id] %>
-          <a href="/posts" class="nav-links">POSTS | </a>
-          <%= link_to("PROFILE | ", user_path(session[:user_id], :class => "nav-links")) %>
-          <%= link_to("EDIT PROFILE | ", edit_user_path(session[:user_id], :class => "nav-links")) %>
+          <a href="/posts" class="nav-links">POSTS</a>
+          <%= link_to("PROFILE", user_path(session[:user_id])) %>
+          <%= link_to("EDIT PROFILE", edit_user_path(session[:user_id], :class => "nav-links")) %>
           <%= link_to("SIGN OUT", session_path(session[:user_id]), method: :delete, :class => "nav-links") %>
         <% else %>
-          <a href="/users/new" class="nav-links">SIGN UP | </a>
+          <a href="/users/new" class="nav-links">SIGN UP</a>
           <a href="/sessions/new" class="nav-links">SIGN IN</a>
         <% end %>
     </nav>

@@ -14,20 +14,40 @@
  *= require_self
  */
 
- .navbar {
-   background-color: #FF9B71;
-   color: #FFFD82;
-   font-family: "Times New Roman";
-   text-decoration: none;
-   padding: 20px;
- }
+body {
+  background-color: #15B097;
+}
+.seinfeld {
+  color: white;
+  padding: 10px 2px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Kalam', cursive;
+}
 
- nav a {
-   color: #FFFD82;
-   text-decoration: none;
- }
+.navbar {
+  /*background-color: #FF9B71;*/
+  color: white;
+  font-family: 'Kalam', cursive;
+  text-decoration: none;
+  padding: 20px;
+}
 
- nav a:hover {
-   background-color: #FFFD82
-   color: #FF9B71;
- }
+.nav-links {
+  border: 2px;
+  border-radius: 4px;
+  border-color: white;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  border: 2px;
+  border-radius: 4px;
+  border-color: white;
+}
+
+/*nav a:hover {
+  background-color: #FFFD82
+  color: #FF9B71;
+}*/

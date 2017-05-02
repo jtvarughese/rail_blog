@@ -58,11 +58,11 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
     if @user.destroy
-      flash[:notice] = "Profile deleted successfully."
+      flash[:notice] = "Profile deleted."
       session[:user_id] = nil
     else
-      flash[:alert] = "There was a problem deleting the profile"
+      flash[:alert] = "Could not delete your profile."
     end
-      redirect_to home_path
-  end 
+      redirect_to "/"
+  end
 end
